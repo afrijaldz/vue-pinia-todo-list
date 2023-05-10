@@ -4,7 +4,7 @@ import MDone from '../Molecules/MDone.vue'
 </script>
 
 <template>
-  <div class="mt-20">
+  <div class="mt-16">
     <ATextHeader>Done</ATextHeader>
     <MDone />
   </div>

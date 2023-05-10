@@ -4,7 +4,7 @@ import MAddTodoVue from '../Molecules/MAddTodo.vue'
 </script>
 
 <template>
-  <div class="mt-20">
+  <div class="mt-16">
     <ATextHeader>New Todo</ATextHeader>
     <MAddTodoVue />
   </div>

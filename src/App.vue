@@ -8,7 +8,7 @@ import OAddTodo from './components/Organisms/OAddTodo.vue'
 <template>
   <Base>
     <OAddTodo />
-    <OTodos />
-    <OTodoDone />
+    <!-- <OTodos />
+    <OTodoDone /> -->
   </Base>
 </template>

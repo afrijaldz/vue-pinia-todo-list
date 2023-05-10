@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <button><slot /></button>
+  <button class="py-2 px-4 rounded"><slot /></button>
 </template>
