@@ -14,6 +14,14 @@ function handleAddTodo(): void {
   todoStore.addTodo({ name: newTodo.value, done: false })
   newTodo.value = ''
 }
+
+const isButtonDisabled = () => {
+  let disabled = false
+
+  disabled = !newTodo.value || newTodo.value === ''
+
+  return disabled
+}
 </script>
 
 <template>
@@ -24,6 +32,11 @@ function handleAddTodo(): void {
       placeholder="Insert Activity"
       v-model="newTodo"
     />
-    <AButton class="bg-green-500 focus:bg-green-600" @click="handleAddTodo">Add</AButton>
+    <AButton
+      class="bg-green-500 focus:bg-green-600 disabled:opacity-75"
+      :disabled="isButtonDisabled()"
+      @click="handleAddTodo"
+      >Add</AButton
+    >
   </ABox>
 </template>

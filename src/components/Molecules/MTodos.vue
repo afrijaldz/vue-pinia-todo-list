@@ -8,17 +8,28 @@ import type { PropType } from 'vue'
 const props = defineProps({
   todo: {
     type: Object as PropType<Todo>
+  },
+  index: {
+    type: Number
   }
 })
+
+const emits = defineEmits<{
+  (e: 'handleDeleteTodo', index: number | undefined): void
+}>()
 </script>
 
 <template>
-  <ABox class="flex justify-between items-center bg-whitish">
+  <ABox class="flex justify-between items-center bg-whitish mb-5">
     <AText>{{ props.todo?.name }}</AText>
     <div>
       <AButton class="bg-yellow-500 rounded focus:bg-yellow-600">Done</AButton>
       &nbsp;
-      <AButton class="bg-red-500 rounded focus:bg-red-600">Delete</AButton>
+      <AButton
+        class="bg-red-500 rounded focus:bg-red-600"
+        @click="emits('handleDeleteTodo', props.index)"
+        >Delete</AButton
+      >
     </div>
   </ABox>
 </template>
