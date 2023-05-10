@@ -1,21 +1,14 @@
 <script setup lang="ts">
 import Base from '@/layouts/base.vue'
-import ATextHeader from '@/components/Atoms/ATextHeader.vue'
-import MAddTodo from '@/components/Molecules/MAddTodo.vue'
-import MTodos from '@/components/Molecules/MTodos.vue'
-import MDone from './components/Molecules/MDone.vue'
+import OTodos from './components/Organisms/OTodos.vue'
+import OTodoDone from './components/Organisms/OTodoDone.vue'
+import OAddTodo from './components/Organisms/OAddTodo.vue'
 </script>
 
 <template>
   <Base>
-    <MAddTodo />
-    <div class="mt-20">
-      <ATextHeader>To do</ATextHeader>
-      <MTodos />
-    </div>
-    <div class="mt-20">
-      <ATextHeader>Done</ATextHeader>
-      <MDone />
-    </div>
+    <OAddTodo />
+    <OTodos />
+    <OTodoDone />
   </Base>
 </template>

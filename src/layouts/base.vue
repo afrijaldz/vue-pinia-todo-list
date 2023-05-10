@@ -6,7 +6,7 @@ import ATextHeader from '@/components/Atoms/ATextHeader.vue'
   <div class="flex justify-center mt-10">
     <div class="sm:w-12 lg:w-4/12">
       <div>
-        <ATextHeader>Todo List App</ATextHeader>
+        <ATextHeader class="text-center text-2xl">Todo List App</ATextHeader>
         <div>
           <slot />
         </div>
