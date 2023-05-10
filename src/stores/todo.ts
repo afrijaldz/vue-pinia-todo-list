@@ -1,12 +1,9 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-interface Todo {
-  name: string
-  done: boolean
-}
+import type { Todo } from '@/types/Todo'
 
-export const useCounterStore = defineStore('counter', () => {
+export const useTodoStore = defineStore('counter', () => {
   const todos = ref<Todo[]>([])
 
   function addTodo(todo: Todo): void {

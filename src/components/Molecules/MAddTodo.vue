@@ -4,10 +4,15 @@ import ABox from '@/components/Atoms/ABox.vue'
 import AButton from '@/components/Atoms/AButton.vue'
 import AInput from '@/components/Atoms/AInput.vue'
 
+import { useTodoStore } from '@/stores/todo'
+
+const todoStore = useTodoStore()
+
 const newTodo = ref<string>('')
 
 function handleAddTodo(): void {
-  console.log(newTodo.value)
+  todoStore.addTodo({ name: newTodo.value, done: false })
+  newTodo.value = ''
 }
 </script>
 

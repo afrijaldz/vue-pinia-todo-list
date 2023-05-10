@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import ATextHeader from '../Atoms/ATextHeader.vue'
 import MTodos from '../Molecules/MTodos.vue'
+import type { Todo } from '@/types/Todo'
+
+import { useTodoStore } from '@/stores/todo'
+
+const todoStore = useTodoStore()
 </script>
 
 <template>
-  <div class="mt-16">
+  <div v-if="todoStore.todos.length > 0" class="mt-16">
     <ATextHeader>Todo</ATextHeader>
-    <MTodos />
+    <div v-for="(todo, index) in todoStore.todos" :key="`todo-${index}`">
+      <MTodos :todo="todo" />
+    </div>
   </div>
 </template>
