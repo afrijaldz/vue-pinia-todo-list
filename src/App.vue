@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import ABox from '@/components/Atoms/ABox.vue'
-import AButton from '@/components/Atoms/AButton.vue'
-import AInput from '@/components/Atoms/AInput.vue'
 import Base from '@/layouts/base.vue'
+import ATextHeader from '@/components/Atoms/ATextHeader.vue'
+import MAddTodo from '@/components/Molecules/MAddTodo.vue'
+import MTodos from '@/components/Molecules/MTodos.vue'
+import MDone from './components/Molecules/MDone.vue'
 </script>
 
 <template>
   <Base>
-    <ABox class="flex justify-between">
-      <AInput
-        type="text"
-        class="border-black border-b w-10/12 px-3"
-        placeholder="Insert Activity"
-      />
-      <AButton class="bg-green-500 py-2 px-3 rounded focus:bg-green-600">Add</AButton>
-    </ABox>
+    <MAddTodo />
+    <div class="mt-20">
+      <ATextHeader>To do</ATextHeader>
+      <MTodos />
+    </div>
+    <div class="mt-20">
+      <ATextHeader>Done</ATextHeader>
+      <MDone />
+    </div>
   </Base>
 </template>

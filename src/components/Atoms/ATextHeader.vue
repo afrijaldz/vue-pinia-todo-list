@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div><slot /></div>
+  <div class="font-bold text-xl my-3"><slot /></div>
 </template>

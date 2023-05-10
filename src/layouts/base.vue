@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import AText from '@/components/Atoms/Atext.vue'
+import ATextHeader from '@/components/Atoms/ATextHeader.vue'
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <div class="w-4/12">
-      <AText>Todo List App</AText>
+  <div class="flex justify-center mt-10">
+    <div class="sm:w-12 lg:w-4/12">
       <div>
-        <slot />
+        <ATextHeader>Todo List App</ATextHeader>
+        <div>
+          <slot />
+        </div>
       </div>
     </div>
   </div>
