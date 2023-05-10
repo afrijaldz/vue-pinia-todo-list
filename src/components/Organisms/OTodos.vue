@@ -8,10 +8,15 @@ const todoStore = useTodoStore()
 </script>
 
 <template>
-  <div v-if="todoStore.todos.length > 0" class="mt-16">
+  <div v-if="todoStore.todosAvailable.length > 0" class="mt-16">
     <ATextHeader>Todo</ATextHeader>
-    <div v-for="(todo, index) in todoStore.todos" :key="`todo-${index}`">
-      <MTodos :todo="todo" :index="index" @handleDeleteTodo="todoStore.deleteTodo" />
+    <div v-for="(todo, index) in todoStore.todosAvailable" :key="`todo-${index}`">
+      <MTodos
+        :todo="todo"
+        :index="index"
+        @handleDeleteTodo="todoStore.deleteTodo"
+        @handleDoneTodo="todoStore.doneTodo"
+      />
     </div>
   </div>
 </template>

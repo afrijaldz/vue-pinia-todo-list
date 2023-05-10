@@ -13,6 +13,9 @@ const todosDone = computed(() => todoStore.todosDone)
 <template>
   <div v-if="todosDone.length > 0" class="mt-16">
     <ATextHeader>Done</ATextHeader>
-    <MDone :todos-done="todosDone" />
+
+    <div v-for="(todo, index) in todosDone" :key="`todo-${index}`">
+      <MDone :todos-done="todo" />
+    </div>
   </div>
 </template>

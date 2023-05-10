@@ -16,6 +16,7 @@ const props = defineProps({
 
 const emits = defineEmits<{
   (e: 'handleDeleteTodo', index: number | undefined): void
+  (e: 'handleDoneTodo', index: number | undefined): void
 }>()
 </script>
 
@@ -23,7 +24,11 @@ const emits = defineEmits<{
   <ABox class="flex justify-between items-center bg-whitish mb-5">
     <AText>{{ props.todo?.name }}</AText>
     <div>
-      <AButton class="bg-yellow-500 rounded focus:bg-yellow-600">Done</AButton>
+      <AButton
+        class="bg-yellow-500 rounded focus:bg-yellow-600"
+        @click="emits('handleDoneTodo', props.index)"
+        >Done</AButton
+      >
       &nbsp;
       <AButton
         class="bg-red-500 rounded focus:bg-red-600"

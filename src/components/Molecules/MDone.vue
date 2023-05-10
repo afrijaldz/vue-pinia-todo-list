@@ -5,14 +5,14 @@ import type { Todo } from '@/types/Todo'
 import type { PropType } from 'vue'
 
 const props = defineProps({
-  todo: {
+  todosDone: {
     type: Object as PropType<Todo>
   }
 })
 </script>
 
 <template>
-  <ABox class="flex justify-between items-center bg-[#8bd3dd]">
-    <AText class="line-through">{{ props.todo?.name }}</AText>
+  <ABox class="flex justify-between items-center bg-[#8bd3dd] mb-5">
+    <AText class="line-through">{{ props.todosDone?.name }}</AText>
   </ABox>
 </template>
