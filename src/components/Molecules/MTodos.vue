@@ -26,13 +26,13 @@ const emits = defineEmits<{
     <div>
       <AButton
         class="bg-yellow-500 rounded focus:bg-yellow-600"
-        @click="emits('handleDoneTodo', props.index)"
+        @click="emits('handleDoneTodo', props.todo?.id)"
         >Done</AButton
       >
       &nbsp;
       <AButton
         class="bg-red-500 rounded focus:bg-red-600"
-        @click="emits('handleDeleteTodo', props.index)"
+        @click="emits('handleDeleteTodo', props.todo?.id)"
         >Delete</AButton
       >
     </div>
